@@ -127,7 +127,7 @@ console.log(name)
 
   //  includes() - checks for subset of characters and returns a Boolean
    console.log(message.includes("lo")) // true
-   console.log(message.includes("Lo")) // true
+   console.log(message.includes("Lo")) // false
    console.log(message.includes("fo")) // false
 
   //  slice() - returns a subset of characters. Takes 2 arguments: start index of subset, end index of subset
