@@ -167,3 +167,22 @@ describe("alphabetSoup", () => {
     }
 
     // Check that it is still passing
+    // successful output:
+        // PASS  ./jest.test.js
+        // tea
+        //   ✓ returns a string that says Bravo2023, take a sip of tea and don't forget to point the pink up (1 ms)
+        // alphabetSoup
+        //   ✓ takes in two arrays and places them in alphabetical order
+      
+      // Pushing changes from a project repo/directory/folder to github
+        // cd out to the github repo: $ cd ..
+        // check that the correct changes were made to the project directory: $ git status
+        // add the changes to be tracked: $ git add <file-or-folder-name>
+        // commit the changes: $ git commit -m "descriptive message"
+        // push changes on a branch to github: $ git push origin <branch-name>
+    
+      // Merging changes locally after merging to main on github
+        // ensure local main branch is up to date with remote main branch: 
+          // $ git checkout main
+          // $ git pull origin main
+        // delete stale branch: $ git branch -d <branch-name>
