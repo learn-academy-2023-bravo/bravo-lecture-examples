@@ -42,3 +42,11 @@ export default App
 - import the component onto App.js with its relative path
 - perform component call
 
+## Pushing changes from a project repo/directory/folder to github
+  - cd out to the github repo: $ cd ..
+  - check that the correct changes were made to the project directory: $ git status
+  - add the changes to be tracked: $ git add <file-or-folder-name>
+  - commit the changes: $ git commit -m "descriptive message"
+  - push changes on a branch to github: $ git push origin <branch-name>
+    
+
