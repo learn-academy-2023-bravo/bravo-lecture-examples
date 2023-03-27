@@ -59,9 +59,9 @@ To add react state
   const [joke, setJoke] = useState("Why did the cowboy have a weiner dog? Somebody told him to get a long little doggy.")
 ```
 
-Now we can reference the state variable with {}instead of hardcoding a value
+Now we can reference the state variable with {} instead of hardcoding a value
 ```js
-{joke}
+  <p>Joke: {joke} </p>
 ```
 
 3. Allow user interaction (clicking a button) to change the value of the joke
@@ -70,7 +70,7 @@ Now we can reference the state variable with {}instead of hardcoding a value
 - Add a custom function called handleJoke to pass the setter function `setJoke` that will change the value of the state variable `joke`
 
 ```js
-  const moreJokes = [
+  const moreJokes = [  
     "Why did the walrus go to a tupperware party? To find a tight Seal!",
     "What award did the dentist get for fixing everyone's teeth? A plaque!",
     "Why was Cinderella so bad at soccer? She kept running away from the ball!",
@@ -116,44 +116,46 @@ To see the logic from Joke.js,
 5. Styling 
   a. Add a background image using the html tag body
     - add css declaration to the App.css
-    ```css
-      body {
-        background-image: url("./assets/coopDirector.png");
-        background-color: aliceblue;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
-      }
-    ```
+```css
+  body {
+    background-image: url("./assets/coopDirector.png");
+    background-color: aliceblue;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+```
     - import App.css to App.js
-    ```js
-      import "./App.css"
-    ```
+```js
+  import "./App.css"
+```
 
   b. Change background color to the text using attributes
     - if using class attribute:
       - within the return statement of the applicable file, encapsulated the applicable code with a div tag
-      ```js
-        <div className="container"> </div>
-      ```
-      - in App.css
-      ```css
-        .container {
-          border: 2px solid black;
-          margin: 0 auto;
-          max-width: 600px;
-          left: 10%;
-          background-color: rgba(250, 235, 215, 0.636);
-        }
-      ```
+```js
+  // in component file
+  <div className="container"> 
+  </div>
+```
+```css
+  /* in App.css */
+      .container {
+        border: 2px solid black;
+        margin: 0 auto;
+        max-width: 600px;
+        left: 10%;
+        background-color: rgba(250, 235, 215, 0.636);
+      }
+```
 
-  c. Change the appearance of the button using inline styling
-    - pass the style attribute on the opening JSX tag of what you want to style
-    - will need two sets of curly braces. One to exit JSX and the other to deliver the style object
-    - naming convention for each key in the style object will be camelCase
-    - each value in the style object will be a recognizable javascript datatype. We are using strings for this example.
-    - each key:value style pair will be separated by commas
-    ```js
+  c. Change the appearance of the button using inline styling  
+  - pass the style attribute on the opening JSX tag of what you want to style  
+  - will need two sets of curly braces. One to exit JSX and the other to deliver the style object  
+  - naming convention for each key in the style object will be camelCase  
+  - each value in the style object will be a recognizable javascript datatype. We are using strings for this example.  
+  - each key:value style pair will be separated by commas
+```js
       <button 
         onClick={handleJoke} 
         style={{
@@ -163,11 +165,11 @@ To see the logic from Joke.js,
       >
         Click for a new joke
       </button>
-    ```
+```
 
 ## Pushing changes from a project repo/directory/folder to github
-cd out to the github repo: $ cd ..
-check that the correct changes were made to the project directory: $ git status
-add the changes to be tracked: $ git add <file-or-folder-name>
-commit the changes: $ git commit -m "descriptive message"
-push changes on a branch to github: $ git push origin <branch-name>
+- cd out to the github repo: `$ cd ..`
+- check that the correct changes were made to the project directory: `$ git status`
+- add the changes to be tracked: `$ git add <file-or-folder-name>`
+- commit the changes: `$ git commit -m "descriptive message"`
+- push changes on a branch to github: `$ git push origin <branch-name>`
