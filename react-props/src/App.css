@@ -1,0 +1,16 @@
+.card {
+  border: 2px solid black;
+  height: 300px;
+  width: 200px;
+  padding: 20px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.media-player {
+  margin: 20px;
+}
