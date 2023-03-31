@@ -52,19 +52,43 @@ import React, {useState} from "react"
     value={user}
   />
 ```
-- create a custom function that will accept  the DOM event and print it out to the console
-```js
-const handleChange = (e) => {
-  // console.log(e)
-  // console.log(e.target)
-  // console.log(e.target.value)
-  setUser(e.target.value)
-}
-const handleChange = (e) => {
-  console.log(e)
-}
-``` 
 
 3. Display user input
-- create custom function
+- create a custom function that will accept  the DOM event and print it out to the console
+  - `e` for event is a developer short hand for letting other developers know we are dealing with a DOM event
+```js
+  const handleChange = (e) => {
+    // console.log(e) //prints the event object
+    // console.log(e.target)  //prints the element that triggered the event
+    console.log(e.target.value) //prints the contents of the input field as they change
+  }
+``` 
+- function call with the onChange attribute on the input tag
+```js
+  <input 
+    type="text" 
+    placeholder="What is your name?"
+    value={user}
+    onChange={handleChange}
+  />
+```
+- modify custom function to change the value of the state variable
+```js
+  const handleChange = (e) => {
+    setUser(e.target.value)
+  }
+```
+
+## Review of what happened
+- State was used to store data for the application.
+- An input field was used as a space to enter text.
+- An onChange attribute listens for the DOM event triggered when the user types in the input field. onChange perform the function call — `handleChange()`
+- `handleChange()` is used to set the target.value property of the event object as the new value for the state variable `user`.
+
+## Final Produce
+- App.js: display component
+- NickName.js: logic component
+
+## Brainstorming  
+- use conditional rendering so the text in the paragraph tag does not appear
 
