@@ -50,12 +50,12 @@
     - $ rails console
 
   - CREATE
-  > PartyAgenda.create(role:'hula_dancer', name:'Elmer')
-  > PartyAgenda.create(role:'hula_dancer', name:'Dre')
-  > PartyAgenda.create(role:'hula_dancer', name:'Felix')
+  > `PartyAgenda.create(role:'hula_dancer', name:'Elmer')`
+  > `PartyAgenda.create(role:'hula_dancer', name:'Dre')`
+  > `PartyAgenda.create(role:'hula_dancer', name:'Felix')`
 
   - READ
-  > PartyAgenda.all
+  > `PartyAgenda.all`
 ```bash
   # rails console confirmation that active record query was properly requested
   PartyAgenda Load (0.4ms)  SELECT "party_agendas".* FROM "party_agendas"
@@ -82,9 +82,9 @@
 
 UPDATE
 - store the active record query in a variable
-  > fire = PartyAgenda.find_by(name: 'Felix')
-  > fire.update(role: 'fire_twirler')
-```bash
+  > `fire = PartyAgenda.find_by(name: 'Felix')`  
+  > `fire.update(role: 'fire_twirler')`
+```rb
   # rails console confirmation that active record query was properly requested
   3.0.0 :006 > fire = PartyAgenda.find_by(name: 'Felix')
     PartyAgenda Load (0.3ms)  SELECT "party_agendas".* FROM "party_agendas" WHERE "party_agendas"."name" = $1 LIMIT $2  [["name", "Felix"], ["LIMIT", 1]]
