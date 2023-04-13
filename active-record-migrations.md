@@ -1,4 +1,4 @@
-Active Record Migrations 4/13/23 Bravo
+# Active Record Migrations 4/13/23 Bravo
 
 ## Create Rails App
 - $ rails new <name_of_app> -d postgresql -T
@@ -13,7 +13,7 @@ Active Record Migrations 4/13/23 Bravo
 ## How to drop rails database
 - $ rails db:drop
 ```bash
-  # printout confirmation that database was dropped
+  # terminal confirmation that database was dropped
   Dropped database 'luau_party_development'
   Dropped database 'luau_party_test'
 ```
@@ -27,7 +27,7 @@ Active Record Migrations 4/13/23 Bravo
     - $ rails generate model PartyAgenda role:string name:string
     - command creates model and migration
 ```bash
-  # printout confirmation that model was generated 
+  # terminal confirmation that model was generated 
   invoke  active_record
   create    db/migrate/20230413205048_create_party_agendas.rb
   create    app/models/party_agenda.rb
@@ -38,7 +38,7 @@ Active Record Migrations 4/13/23 Bravo
       - schema appears (created by rails)
       - table will be snake_case and plural (created by rails)
 ```bash
-  # printout confirmation that schema was updated 
+  # terminal confirmation that schema was updated 
   == 20230413205048 CreatePartyAgendas: migrating ===============================
   -- create_table(:party_agendas)
     -> 0.0094s
@@ -56,8 +56,9 @@ Active Record Migrations 4/13/23 Bravo
 
   - READ
   > PartyAgenda.all
-  ```bash
-    PartyAgenda Load (0.4ms)  SELECT "party_agendas".* FROM "party_agendas"
+```bash
+  # rails console confirmation that active record query was properly requested
+  PartyAgenda Load (0.4ms)  SELECT "party_agendas".* FROM "party_agendas"
   =>    
   [#<PartyAgenda:0x000000012a880470     
     id:1,         
@@ -81,9 +82,10 @@ Active Record Migrations 4/13/23 Bravo
 
 UPDATE
 - store the active record query in a variable
-> fire = PartyAgenda.find_by(name: 'Felix')
-> fire.update(role: 'fire_twirler')
+  > fire = PartyAgenda.find_by(name: 'Felix')
+  > fire.update(role: 'fire_twirler')
 ```bash
+  # rails console confirmation that active record query was properly requested
   3.0.0 :006 > fire = PartyAgenda.find_by(name: 'Felix')
     PartyAgenda Load (0.3ms)  SELECT "party_agendas".* FROM "party_agendas" WHERE "party_agendas"."name" = $1 LIMIT $2  [["name", "Felix"], ["LIMIT", 1]]
   => 
@@ -113,15 +115,15 @@ UPDATE
 ```
 
 ## Adding a column
-- Generate a migration
+1. Generate a migration
   - $ rails generate migration AddConfirmedColumnToPartyAgenda
 
-- Add a change definition to the change method in the migration file
-  - structure; add_column :table_name, :column_name, :datatype
+2. Add a change definition to the change method in the migration file
+  - structure--> `add_column :table_name, :column_name, :datatype`
 ```rb
   add_column :party_agendas, :confirmed, :string
 ```
 
-- Update schema with the migrations
+3. Update schema with the changes from the migration file
   - $ rails db:migrate
 
